@@ -1,16 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ListView?>
 <?import javafx.scene.control.ScrollBar?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.text.Font?>
 
-
-<GridPane alignment="center" hgap="10" vgap="10" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/15.0.1" fx:controller="sample.Controller">
+<GridPane alignment="center" hgap="10" vgap="10" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
    <columnConstraints>
       <ColumnConstraints />
       <ColumnConstraints />
@@ -20,16 +23,16 @@
       <RowConstraints />
    </rowConstraints>
    <children>
-      <AnchorPane prefHeight="400.0" prefWidth="650.0">
+      <AnchorPane prefHeight="400.0" prefWidth="650.0" visible="false">
          <children>
             <ListView layoutX="14.0" layoutY="13.0" prefHeight="383.0" prefWidth="246.0" />
             <ScrollBar layoutX="246.0" layoutY="13.0" orientation="VERTICAL" prefHeight="383.0" prefWidth="14.0" />
-            <Label layoutX="286.0" layoutY="41.0" prefHeight="30.0" prefWidth="150.0" text="Item">
+            <Label layoutX="286.0" layoutY="38.0" prefHeight="30.0" prefWidth="150.0" text="Item">
                <font>
                   <Font size="17.0" />
                </font>
             </Label>
-            <Label layoutX="286.0" layoutY="71.0" prefHeight="30.0" prefWidth="150.0" text="Servings">
+            <Label layoutX="286.0" layoutY="68.0" prefHeight="30.0" prefWidth="150.0" text="Servings">
                <font>
                   <Font size="17.0" />
                </font>
@@ -44,6 +47,60 @@
                   <Font size="17.0" />
                </font>
             </Label>
+            <TextField layoutX="416.0" layoutY="41.0" />
+            <TextField layoutX="416.0" layoutY="71.0" />
+            <TextField layoutX="583.0" layoutY="41.0" prefHeight="25.0" prefWidth="36.0" />
+            <Label layoutX="583.0" layoutY="13.0" prefHeight="30.0" prefWidth="36.0" text="QTY.">
+               <font>
+                  <Font size="17.0" />
+               </font>
+            </Label>
+            <DatePicker layoutX="416.0" layoutY="131.0" prefHeight="25.0" prefWidth="149.0" />
+            <ChoiceBox layoutX="416.0" layoutY="101.0" prefWidth="150.0" />
+            <Button layoutX="394.0" layoutY="175.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="84.0" text="Add to list" />
+         </children>
+      </AnchorPane>
+      <AnchorPane prefHeight="400.0" prefWidth="650.0">
+         <children>
+            <ListView layoutX="14.0" layoutY="13.0" prefHeight="383.0" prefWidth="246.0" />
+            <ScrollBar layoutX="246.0" layoutY="13.0" orientation="VERTICAL" prefHeight="383.0" prefWidth="14.0" />
+            <Label layoutX="286.0" layoutY="38.0" prefHeight="30.0" prefWidth="150.0" text="Item">
+               <font>
+                  <Font size="17.0" />
+               </font>
+            </Label>
+            <Label layoutX="286.0" layoutY="68.0" prefHeight="30.0" prefWidth="150.0" text="Servings">
+               <font>
+                  <Font size="17.0" />
+               </font>
+            </Label>
+            <Label layoutX="286.0" layoutY="98.0" prefHeight="30.0" prefWidth="150.0" text="Type">
+               <font>
+                  <Font size="17.0" />
+               </font>
+            </Label>
+            <Label layoutX="286.0" layoutY="363.0" prefHeight="30.0" prefWidth="150.0" text="Expiration Date">
+               <font>
+                  <Font size="17.0" />
+               </font>
+            </Label>
+            <TextField layoutX="416.0" layoutY="41.0" />
+            <TextField layoutX="416.0" layoutY="71.0" />
+            <TextField layoutX="583.0" layoutY="41.0" prefHeight="25.0" prefWidth="36.0" />
+            <Label layoutX="583.0" layoutY="13.0" prefHeight="30.0" prefWidth="36.0" text="QTY.">
+               <font>
+                  <Font size="17.0" />
+               </font>
+            </Label>
+            <DatePicker layoutX="416.0" layoutY="366.0" prefHeight="25.0" prefWidth="149.0" />
+            <ChoiceBox layoutX="416.0" layoutY="101.0" prefWidth="150.0" />
+            <Label layoutX="286.0" layoutY="159.0" prefHeight="30.0" prefWidth="150.0" text="Servings Used">
+               <font>
+                  <Font size="17.0" />
+               </font>
+            </Label>
+            <TextField layoutX="416.0" layoutY="162.0" />
+            <Button layoutX="575.0" layoutY="162.0" mnemonicParsing="false" text="Subtract" />
          </children>
       </AnchorPane>
    </children>
