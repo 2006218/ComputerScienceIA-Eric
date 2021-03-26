@@ -1,6 +1,17 @@
 package sample;
 
-public class Controller {
+import javafx.event.ActionEvent;
 
-    //fewfew
+public class Controller {
+    public void addToListButton(ActionEvent actionEvent) {
+    }
+
+    public void subtractServingsButton(ActionEvent actionEvent) {
+    }
+
+    public void backToMenuButton(ActionEvent actionEvent) {
+    }
+
+    public void removeFromList(ActionEvent actionEvent) {
+    }
 }

@@ -47,17 +47,17 @@
                   <Font size="17.0" />
                </font>
             </Label>
-            <TextField layoutX="416.0" layoutY="41.0" />
-            <TextField layoutX="416.0" layoutY="71.0" />
-            <TextField layoutX="583.0" layoutY="41.0" prefHeight="25.0" prefWidth="36.0" />
+            <TextField fx:id="itemTxtbox" layoutX="416.0" layoutY="41.0" />
+            <TextField fx:id="servingsTxtbox" layoutX="416.0" layoutY="71.0" />
+            <TextField fx:id="qtyTxtbox" layoutX="583.0" layoutY="41.0" prefHeight="25.0" prefWidth="36.0" />
             <Label layoutX="583.0" layoutY="13.0" prefHeight="30.0" prefWidth="36.0" text="QTY.">
                <font>
                   <Font size="17.0" />
                </font>
             </Label>
-            <DatePicker layoutX="416.0" layoutY="131.0" prefHeight="25.0" prefWidth="149.0" />
-            <ChoiceBox layoutX="416.0" layoutY="101.0" prefWidth="150.0" />
-            <Button layoutX="394.0" layoutY="175.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="84.0" text="Add to list" />
+            <DatePicker fx:id="expirationDatepicker" layoutX="416.0" layoutY="131.0" prefHeight="25.0" prefWidth="149.0" />
+            <ChoiceBox fx:id="typeChoicebox" layoutX="416.0" layoutY="101.0" prefWidth="150.0" />
+            <Button layoutX="394.0" layoutY="175.0" mnemonicParsing="false" onAction="#addToListButton" prefHeight="25.0" prefWidth="84.0" text="Add to list" />
          </children>
       </AnchorPane>
       <AnchorPane prefHeight="400.0" prefWidth="650.0">
@@ -84,23 +84,25 @@
                   <Font size="17.0" />
                </font>
             </Label>
-            <TextField layoutX="416.0" layoutY="41.0" />
-            <TextField layoutX="416.0" layoutY="71.0" />
-            <TextField layoutX="583.0" layoutY="41.0" prefHeight="25.0" prefWidth="36.0" />
+            <TextField fx:id="outputNameTxtbox" layoutX="416.0" layoutY="41.0" />
+            <TextField fx:id="outputServingsTxtbox" layoutX="416.0" layoutY="71.0" />
+            <TextField fx:id="outputQtyTxtbox" layoutX="583.0" layoutY="41.0" prefHeight="25.0" prefWidth="36.0" />
             <Label layoutX="583.0" layoutY="13.0" prefHeight="30.0" prefWidth="36.0" text="QTY.">
                <font>
                   <Font size="17.0" />
                </font>
             </Label>
-            <DatePicker layoutX="416.0" layoutY="366.0" prefHeight="25.0" prefWidth="149.0" />
-            <ChoiceBox layoutX="416.0" layoutY="101.0" prefWidth="150.0" />
             <Label layoutX="286.0" layoutY="159.0" prefHeight="30.0" prefWidth="150.0" text="Servings Used">
                <font>
                   <Font size="17.0" />
                </font>
             </Label>
             <TextField layoutX="416.0" layoutY="162.0" />
-            <Button layoutX="575.0" layoutY="162.0" mnemonicParsing="false" text="Subtract" />
+            <Button layoutX="575.0" layoutY="162.0" mnemonicParsing="false" onAction="#subtractServingsButton" text="Subtract" />
+            <TextField fx:id="outputTypeTxtbox" layoutX="416.0" layoutY="101.0" />
+            <TextField fx:id="outputExpirationTxtbox" layoutX="416.0" layoutY="366.0" />
+            <Button layoutX="305.0" layoutY="246.0" mnemonicParsing="false" onAction="#backToMenuButton" text="Back" />
+            <Button layoutX="361.0" layoutY="246.0" mnemonicParsing="false" onAction="#removeFromList" text="Remove from List" />
          </children>
       </AnchorPane>
    </children>
