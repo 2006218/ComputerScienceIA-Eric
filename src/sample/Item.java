@@ -3,6 +3,8 @@ package sample;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.DatePicker;
 
+import java.time.LocalDate;
+
 public class Item {
 
     private String item;
@@ -23,36 +25,36 @@ public class Item {
         this.servings = servings;
     }
 
-    public String getQuantity() {
+    public int getQuantity() {
         return quantity;
     }
 
-    public void setQuantity(String quantity) {
+    public void setQuantity(int quantity) {
         this.quantity = quantity;
     }
 
-    public DatePicker getExpirationDate() {
+    public LocalDate getExpirationDate() {
         return expirationDate;
     }
 
-    public void setExpirationDate(DatePicker expirationDate) {
+    public void setExpirationDate(LocalDate expirationDate) {
         this.expirationDate = expirationDate;
     }
 
-    public ChoiceBox getType() {
+    public String getType() {
         return type;
     }
 
-    public void setType(ChoiceBox type) {
+    public void setType(String type) {
         this.type = type;
     }
 
     private int servings;
-    private String quantity;
-    private DatePicker expirationDate;
-    private ChoiceBox type;
+    private int quantity;
+    private LocalDate expirationDate;
+    private String type;  //string or Loose
 
-    public Item(String item, int servings, String quantity, DatePicker expirationDate, ChoiceBox type) {
+    public Item(String item, int servings, int quantity, String type) {
         this.item = item;
         this.servings = servings;
         this.expirationDate = expirationDate;

@@ -18,10 +18,16 @@ public class Controller {
     @FXML private DatePicker xpirationDatepicker;
     @FXML private ListView productList;
 
-    ArrayList <Item>
+    ArrayList <Item> items = new ArrayList<Item>();
 
+    public void initialize(){ //this is like the MAIN where everythin gis set up..
+        typeChoicebox.getItems().add(0,"Loose item");
+        typeChoicebox.getItems().add(1,"Packaged item");
+    }
 
     public void addToListButton(ActionEvent actionEvent) {
+        items.add(new Item(itemTxtbox.getText(), Integer.parseInt(servingsTxtbox.getText()), Integer.parseInt(qtyTxtbox.getText()), typeChoicebox.getSelectionModel().getSelectedItem().toString()));
+    System.out.println(items);
     }
 
     public void subtractServingsButton(ActionEvent actionEvent) {
