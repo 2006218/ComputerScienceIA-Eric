@@ -13,7 +13,7 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.text.Font?>
 
-<GridPane alignment="center" hgap="10" vgap="10" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+<GridPane alignment="center" hgap="10" minHeight="400.0" minWidth="650.0" vgap="10" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
    <columnConstraints>
       <ColumnConstraints />
       <ColumnConstraints />
@@ -23,9 +23,9 @@
       <RowConstraints />
    </rowConstraints>
    <children>
-      <AnchorPane prefHeight="400.0" prefWidth="650.0">
+      <AnchorPane fx:id="mainPanel" minHeight="400.0" minWidth="650.0" prefHeight="400.0" prefWidth="650.0">
          <children>
-            <ListView fx:id="productList" layoutX="14.0" layoutY="13.0" prefHeight="383.0" prefWidth="246.0" />
+            <ListView fx:id="productList" layoutX="14.0" layoutY="13.0" onMouseClicked="#itemListClicked" prefHeight="383.0" prefWidth="246.0" />
             <ScrollBar layoutX="246.0" layoutY="13.0" orientation="VERTICAL" prefHeight="383.0" prefWidth="14.0" />
             <Label layoutX="286.0" layoutY="38.0" prefHeight="30.0" prefWidth="150.0" text="Item">
                <font>
@@ -60,10 +60,8 @@
             <Button layoutX="394.0" layoutY="175.0" mnemonicParsing="false" onAction="#addToListButton" prefHeight="25.0" prefWidth="84.0" text="Add to list" />
          </children>
       </AnchorPane>
-      <AnchorPane prefHeight="400.0" prefWidth="650.0" visible="false">
+      <AnchorPane fx:id="itemPanel" prefHeight="400.0" prefWidth="650.0" visible="false">
          <children>
-            <ListView layoutX="14.0" layoutY="13.0" prefHeight="383.0" prefWidth="246.0" />
-            <ScrollBar layoutX="246.0" layoutY="13.0" orientation="VERTICAL" prefHeight="383.0" prefWidth="14.0" />
             <Label layoutX="286.0" layoutY="38.0" prefHeight="30.0" prefWidth="150.0" text="Item">
                <font>
                   <Font size="17.0" />
