@@ -43,12 +43,15 @@ public class Controller {
     public void addToListButton(ActionEvent actionEvent) {
         items.add(new Item(itemTxtbox.getText(), Integer.parseInt(servingsTxtbox.getText()), Integer.parseInt(qtyTxtbox.getText()), typeChoicebox.getSelectionModel().getSelectedItem().toString()));
     System.out.println(items);
-    items.forEach((i)->productList.getItems().add(i.getItem()));
     productList.getItems().clear(); // Makes sure the list is cleared before adding new person to the list (avoids printing past items again in the list)
+        items.forEach((i)->productList.getItems().add(i.getItem()));
 
     }
 
     public void subtractServingsButton(ActionEvent actionEvent) {
+
+
+
     }
 
     public void backToMenuButton(ActionEvent actionEvent) {
@@ -57,11 +60,13 @@ public class Controller {
     }
 
     public void removeFromList(ActionEvent actionEvent) {
-    }
+
+
+        }
 
     public void itemListClicked(MouseEvent mouseEvent) {
-        mainPanel.setVisible(false); // Switches main panel to item panel by setting it to invisible
-        itemPanel.setVisible(true);
+        mainPanel.setVisible(false);
+        itemPanel.setVisible(true); // Switches item panel to main panel by setting it to invisible
 
         int pIndex = productList.getSelectionModel().getSelectedIndex();
         outputNameTxtbox.setText(items.get(pIndex).getItem());
