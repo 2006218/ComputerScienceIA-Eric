@@ -18,7 +18,7 @@ public class Controller {
 
     // Main Menu
     @FXML private TextField itemTxtbox;
-    @FXML private TextField servingsTxtbox;
+    @FXML private TextField servingsPerItemTxtbox;
     @FXML private TextField qtyTxtbox;
     @FXML private ChoiceBox typeChoicebox;
     @FXML private DatePicker xpirationDatepicker;
@@ -42,7 +42,7 @@ public class Controller {
     }
 
     public void addToListButton(ActionEvent actionEvent) {
-        items.add(new Item(itemTxtbox.getText(), Integer.parseInt(servingsTxtbox.getText()), Integer.parseInt(qtyTxtbox.getText()), typeChoicebox.getSelectionModel().getSelectedItem().toString()));
+        items.add(new Item(itemTxtbox.getText(), Integer.parseInt(servingsPerItemTxtbox.getText()), Integer.parseInt(qtyTxtbox.getText()), typeChoicebox.getSelectionModel().getSelectedItem().toString()));
     System.out.println(items);
         updateListfunction();
         System.out.println("Succesfully added item!");
@@ -56,11 +56,22 @@ public class Controller {
 
 
 
+
     public void subtractServingsButton(ActionEvent actionEvent) {
        // int servings.
         int currentServings = items.get(pIndex).getServings();
         try {
-            items.get(pIndex).setServings(currentServings - Integer.parseInt(subtractTxtBox.getText()));
+            items.get(pIndex).setServings(currentServings - Integer.parseInt(subtractTxtBox.getText())); //change the number of servings.
+            items.get(pIndex).setQuantity((int) Math.ceil(items.get(pIndex).getServings() / items.get(pIndex).sPerItem));      //quantity =servings / sPerItem ;
+                //ceil rounds up to the ceiling. to rounding up. This makes sure that if there is slightly less than a single bottle there is still a bottle.
+            System.out.println(items.get(pIndex).getQuantity());
+            outputQtyTxtbox.setText(String.valueOf(items.get(pIndex).getQuantity()));
+            if(currentServings <= 0) {
+                items.remove(pIndex);
+                updateListfunction();
+                mainPanel.setVisible(true);
+                itemPanel.setVisible(false);
+            }
 
         }catch (Exception e){
 

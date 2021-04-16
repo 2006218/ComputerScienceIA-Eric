@@ -8,13 +8,20 @@ import java.time.LocalDate;
 public class Item {
 
     private String item;
+    int sPerItem;
+    private int servings;
+    private int quantity;
+    private LocalDate expirationDate;
+    private String type;  //string or Loose
 
     public String getItem() {
         return item;
     }
 
     public void setItem(String item) {
+
         this.item = item;
+
     }
 
     public int getServings() {
@@ -49,18 +56,19 @@ public class Item {
         this.type = type;
     }
 
-    private int servings;
-    private int quantity;
-    private LocalDate expirationDate;
-    private String type;  //string or Loose
 
-    public Item(String item, int servings, int quantity, String type) {
+
+    public Item(String item, int sPerItem, int quantity, String type) {
         this.item = item;
-        this.servings = servings;
+        this.sPerItem = sPerItem;
         this.expirationDate = expirationDate;
         this.type = type;
+        this.quantity = quantity;
 
+        this.setServings(sPerItem*quantity);
     }
+
+
 
 
 }

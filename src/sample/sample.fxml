@@ -33,7 +33,7 @@
                   <Font size="17.0" />
                </font>
             </Label>
-            <Label layoutX="286.0" layoutY="68.0" prefHeight="30.0" prefWidth="150.0" text="Servings">
+            <Label layoutX="286.0" layoutY="68.0" prefHeight="30.0" prefWidth="150.0" text="Servings Per Item">
                <font>
                   <Font size="17.0" />
                </font>
@@ -49,7 +49,7 @@
                </font>
             </Label>
             <TextField fx:id="itemTxtbox" layoutX="416.0" layoutY="41.0" />
-            <TextField fx:id="servingsTxtbox" layoutX="416.0" layoutY="71.0" />
+            <TextField fx:id="servingsPerItemTxtbox" layoutX="416.0" layoutY="71.0" />
             <TextField fx:id="qtyTxtbox" layoutX="583.0" layoutY="41.0" prefHeight="25.0" prefWidth="36.0" />
             <Label layoutX="583.0" layoutY="13.0" prefHeight="30.0" prefWidth="36.0" text="QTY.">
                <font>
