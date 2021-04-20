@@ -58,7 +58,7 @@ public class Item {
 
 
 
-    public Item(String item, int sPerItem, int quantity, String type) {
+    public Item(String item, int sPerItem, int quantity, String type, LocalDate expirationDate ) {
         this.item = item;
         this.sPerItem = sPerItem;
         this.expirationDate = expirationDate;

@@ -6,9 +6,11 @@ import javafx.scene.control.*;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 
 public class Controller {
+    @FXML private DatePicker outputExpirationDatePicker;
     @FXML private TextField subtractTxtBox;
 
     // Panels
@@ -21,7 +23,7 @@ public class Controller {
     @FXML private TextField servingsPerItemTxtbox;
     @FXML private TextField qtyTxtbox;
     @FXML private ChoiceBox typeChoicebox;
-    @FXML private DatePicker xpirationDatepicker;
+    @FXML private DatePicker expirationDatepicker;
     @FXML private ListView productList;
 
     // Item Panel
@@ -42,7 +44,9 @@ public class Controller {
     }
 
     public void addToListButton(ActionEvent actionEvent) {
-        items.add(new Item(itemTxtbox.getText(), Integer.parseInt(servingsPerItemTxtbox.getText()), Integer.parseInt(qtyTxtbox.getText()), typeChoicebox.getSelectionModel().getSelectedItem().toString()));
+        //LocalDate date =  expirationDatepicker.getValue();
+
+        items.add(new Item(itemTxtbox.getText(), Integer.parseInt(servingsPerItemTxtbox.getText()), Integer.parseInt(qtyTxtbox.getText()), typeChoicebox.getSelectionModel().getSelectedItem().toString(), expirationDatepicker.getValue()));
     System.out.println(items);
         updateListfunction();
         System.out.println("Succesfully added item!");
@@ -55,16 +59,14 @@ public class Controller {
     }
 
 
-
-
     public void subtractServingsButton(ActionEvent actionEvent) {
        // int servings.
         int currentServings = items.get(pIndex).getServings();
         try {
             items.get(pIndex).setServings(currentServings - Integer.parseInt(subtractTxtBox.getText())); //change the number of servings.
-            items.get(pIndex).setQuantity((int) Math.ceil(items.get(pIndex).getServings() / items.get(pIndex).sPerItem));      //quantity =servings / sPerItem ;
+            items.get(pIndex).setQuantity((int) Math.ceil((double)items.get(pIndex).getServings() / items.get(pIndex).sPerItem));      //quantity =servings / sPerItem ;
                 //ceil rounds up to the ceiling. to rounding up. This makes sure that if there is slightly less than a single bottle there is still a bottle.
-            System.out.println(items.get(pIndex).getQuantity());
+
             outputQtyTxtbox.setText(String.valueOf(items.get(pIndex).getQuantity()));
             if(currentServings <= 0) {
                 items.remove(pIndex);
@@ -109,7 +111,10 @@ public class Controller {
         outputServingsTxtbox.setText(Integer.toString(items.get(pIndex).getServings()));
         outputTypeTxtbox.setText(items.get(pIndex).getType());
         outputQtyTxtbox.setText(Integer.toString(items.get(pIndex).getQuantity()));
+        outputExpirationTxtbox.setText(items.get(pIndex).getExpirationDate().toString());
+        outputExpirationDatePicker.setValue(items.get(pIndex).getExpirationDate());
         System.out.println("Succesfully selected item");
 
     }
 }
+
