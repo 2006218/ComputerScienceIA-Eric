@@ -4,5 +4,5 @@ Abstract: A cook needs to keep track of the groceries available in the pantry, t
 
 IA documentation: https://drive.google.com/drive/folders/1slf5zrVe23i2eyUmOU2BK1I47f6-QFBb?usp=sharing
 
-This program is being developed in java by Eric Li, 2006218@newton.pe
+This program is being developed in Java and SceneBuilder by Eric Li, 2006218@newton.pe
 
