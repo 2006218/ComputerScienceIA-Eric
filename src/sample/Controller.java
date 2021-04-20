@@ -32,6 +32,7 @@ public class Controller {
     @FXML private TextField outputTypeTxtbox;
     @FXML private TextField outputQtyTxtbox;
     @FXML private TextField outputExpirationTxtbox;
+    @FXML private TextField outputExpirationTxtbox1;
 
     ArrayList <Item> items = new ArrayList<Item>();
 
@@ -40,6 +41,8 @@ public class Controller {
         typeChoicebox.getItems().add(1,"Packaged item");
         mainPanel.setVisible(true);
         itemPanel.setVisible(false); // Switches item panel to main panel by setting it to invisible
+        LocalDate today = LocalDate.now();
+        System.out.println("Today's date is: " + LocalDate.now());
         System.out.println("Succesfully initialized!");
     }
 
@@ -50,6 +53,7 @@ public class Controller {
     System.out.println(items);
         updateListfunction();
         System.out.println("Succesfully added item!");
+
     }
 
     public void updateListfunction(){
@@ -78,7 +82,7 @@ public class Controller {
         }catch (Exception e){
 
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
-            alert.setTitle("Incorrect servings amount. please enter a number");
+            alert.setTitle("Incorrect servings amount. please enter a number.");
             alert.setHeaderText(null);
             alert.setContentText("All 3 boxes need filling. If there is no subtopic, type the same topic.");
             alert.showAndWait();
@@ -99,7 +103,8 @@ public class Controller {
         itemPanel.setVisible(false); // Switches item panel to main panel by setting it to invisible
         items.remove(pIndex);
         updateListfunction();
-        }
+        System.out.println("Succesfully removed item!");
+    }
 
    private int pIndex;
     public void itemListClicked(MouseEvent mouseEvent) {
@@ -113,6 +118,13 @@ public class Controller {
         outputQtyTxtbox.setText(Integer.toString(items.get(pIndex).getQuantity()));
         outputExpirationTxtbox.setText(items.get(pIndex).getExpirationDate().toString());
         outputExpirationDatePicker.setValue(items.get(pIndex).getExpirationDate());
+        outputExpirationTxtbox1.setText(items.get(pIndex).getExpirationDate().toString());
+        if (items.get(pIndex).getExpirationDate().isAfter(LocalDate.now())) {
+            System.out.println("Item expired");
+        } else {
+            System.out.println("Item not expired");
+        }
+
         System.out.println("Succesfully selected item");
 
     }
