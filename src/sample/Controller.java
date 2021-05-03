@@ -47,10 +47,11 @@ public class Controller {
     }
 
     public void addToListButton(ActionEvent actionEvent) {
-        //LocalDate date =  expirationDatepicker.getValue();
 
+        //if the item alreadyt exists, dont add it again.
         items.add(new Item(itemTxtbox.getText(), Integer.parseInt(servingsPerItemTxtbox.getText()), Integer.parseInt(qtyTxtbox.getText()), typeChoicebox.getSelectionModel().getSelectedItem().toString(), expirationDatepicker.getValue()));
     System.out.println(items);
+    //end list
         updateListfunction();
         System.out.println("Succesfully added item!");
 

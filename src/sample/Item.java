@@ -4,6 +4,7 @@ import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.DatePicker;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
 
 public class Item {
 
@@ -12,7 +13,8 @@ public class Item {
     private int servings;
     private int quantity;
     private LocalDate expirationDate;
-    private String type;  //string or Loose
+    private String type     ;  //string or Loose
+    ArrayList<ChildItem> chilIitems = new ArrayList<ChildItem>();
 
     public String getItem() {
         return item;
@@ -23,6 +25,7 @@ public class Item {
         this.item = item;
 
     }
+
 
     public int getServings() {
         return servings;
