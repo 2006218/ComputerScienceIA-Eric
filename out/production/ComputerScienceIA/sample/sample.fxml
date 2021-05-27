@@ -24,7 +24,7 @@
       <RowConstraints />
    </rowConstraints>
    <children>
-      <AnchorPane fx:id="mainPanel" minHeight="400.0" minWidth="650.0" prefHeight="400.0" prefWidth="650.0">
+      <AnchorPane fx:id="mainPanel" minHeight="400.0" minWidth="650.0" prefHeight="400.0" prefWidth="650.0" visible="false">
          <children>
             <ListView fx:id="productList" layoutX="14.0" layoutY="13.0" onMouseClicked="#itemListClicked" prefHeight="383.0" prefWidth="246.0" />
             <ScrollBar layoutX="246.0" layoutY="13.0" orientation="VERTICAL" prefHeight="383.0" prefWidth="14.0" />
@@ -58,11 +58,10 @@
             </Label>
             <DatePicker fx:id="expirationDatepicker" layoutX="416.0" layoutY="131.0" prefHeight="25.0" prefWidth="149.0" />
             <ChoiceBox fx:id="typeChoicebox" layoutX="416.0" layoutY="101.0" prefWidth="150.0" />
-            <Button layoutX="361.0" layoutY="188.0" mnemonicParsing="false" onAction="#addToListButton" prefHeight="25.0" prefWidth="84.0" text="Add to list" />
-            <Button layoutX="466.0" layoutY="188.0" mnemonicParsing="false" onAction="#saveButton" prefHeight="25.0" prefWidth="84.0" text="Save" />
+            <Button layoutX="394.0" layoutY="175.0" mnemonicParsing="false" onAction="#addToListButton" prefHeight="25.0" prefWidth="84.0" text="Add to list" />
          </children>
       </AnchorPane>
-      <AnchorPane fx:id="itemPanel" prefHeight="400.0" prefWidth="650.0" visible="false">
+      <AnchorPane fx:id="itemPanel" prefHeight="400.0" prefWidth="650.0">
          <children>
             <Label layoutX="25.0" layoutY="38.0" prefHeight="30.0" prefWidth="150.0" text="Item">
                <font>

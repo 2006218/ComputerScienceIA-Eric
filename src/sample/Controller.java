@@ -1,11 +1,15 @@
 package sample;
 
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 
+import java.io.FileWriter;
+import java.io.IOException;
 import java.time.LocalDate;
 import java.util.ArrayList;
 
@@ -127,6 +131,23 @@ public class Controller {
         }
 
         System.out.println("Succesfully selected item");
+
+    }
+
+    public void saveButton(ActionEvent actionEvent) {
+        Gson gson = new GsonBuilder().setPrettyPrinting().create();
+
+        // Java objects to String
+        String json = gson.toJson(Item);
+
+        //System.out.println(json);
+
+        // Java objects to File
+        try (FileWriter writer = new FileWriter("items.json")) {
+            gson.toJson(Item, writer);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
 
     }
 }
