@@ -24,7 +24,7 @@
       <RowConstraints />
    </rowConstraints>
    <children>
-      <AnchorPane fx:id="mainPanel" minHeight="400.0" minWidth="650.0" prefHeight="400.0" prefWidth="650.0">
+      <AnchorPane fx:id="mainPanel" minHeight="400.0" minWidth="650.0" prefHeight="400.0" prefWidth="650.0" visible="false">
          <children>
             <ListView fx:id="productList" layoutX="14.0" layoutY="13.0" onMouseClicked="#itemListClicked" prefHeight="383.0" prefWidth="246.0" />
             <ScrollBar layoutX="246.0" layoutY="13.0" orientation="VERTICAL" prefHeight="383.0" prefWidth="14.0" />
@@ -62,7 +62,7 @@
             <Button layoutX="466.0" layoutY="188.0" mnemonicParsing="false" onAction="#saveButton" prefHeight="25.0" prefWidth="84.0" text="Save" />
          </children>
       </AnchorPane>
-      <AnchorPane fx:id="itemPanel" prefHeight="400.0" prefWidth="650.0" visible="false">
+      <AnchorPane fx:id="itemPanel" prefHeight="400.0" prefWidth="650.0">
          <children>
             <Label layoutX="25.0" layoutY="38.0" prefHeight="30.0" prefWidth="150.0" text="Item">
                <font>
@@ -109,8 +109,7 @@
                   <Font size="17.0" />
                </font>
             </Label>
-            <TextField fx:id="outputExpirationTxtbox1" layoutX="452.0" layoutY="366.0" />
-            <DatePicker fx:id="outputExpirationDatePicker" layoutX="145.0" layoutY="323.0" prefHeight="25.0" prefWidth="149.0" />
+            <TextField fx:id="safeToConsume" layoutX="452.0" layoutY="366.0" />
          </children>
       </AnchorPane>
    </children>

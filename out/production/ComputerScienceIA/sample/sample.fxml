@@ -58,7 +58,8 @@
             </Label>
             <DatePicker fx:id="expirationDatepicker" layoutX="416.0" layoutY="131.0" prefHeight="25.0" prefWidth="149.0" />
             <ChoiceBox fx:id="typeChoicebox" layoutX="416.0" layoutY="101.0" prefWidth="150.0" />
-            <Button layoutX="394.0" layoutY="175.0" mnemonicParsing="false" onAction="#addToListButton" prefHeight="25.0" prefWidth="84.0" text="Add to list" />
+            <Button layoutX="361.0" layoutY="188.0" mnemonicParsing="false" onAction="#addToListButton" prefHeight="25.0" prefWidth="84.0" text="Add to list" />
+            <Button layoutX="466.0" layoutY="188.0" mnemonicParsing="false" onAction="#saveButton" prefHeight="25.0" prefWidth="84.0" text="Save" />
          </children>
       </AnchorPane>
       <AnchorPane fx:id="itemPanel" prefHeight="400.0" prefWidth="650.0">
@@ -108,8 +109,7 @@
                   <Font size="17.0" />
                </font>
             </Label>
-            <TextField fx:id="outputExpirationTxtbox1" layoutX="452.0" layoutY="366.0" />
-            <DatePicker fx:id="outputExpirationDatePicker" layoutX="145.0" layoutY="323.0" prefHeight="25.0" prefWidth="149.0" />
+            <TextField fx:id="safeToConsume" layoutX="452.0" layoutY="366.0" />
          </children>
       </AnchorPane>
    </children>
